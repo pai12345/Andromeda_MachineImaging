@@ -1,0 +1,13 @@
+# Cache objects
+packer_cache/
+
+# misc
+**/.vscode
+**/settings.json
+
+# Crash log
+crash.log
+**.log
+
+# For built boxes
+*.box
