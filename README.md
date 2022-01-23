@@ -1,1 +1,3 @@
-# Andromeda Project for creating Machine Images with Packer
+# Andromeda Packer Project
+
+Andromeda Project for creating Machine Images with Packer
