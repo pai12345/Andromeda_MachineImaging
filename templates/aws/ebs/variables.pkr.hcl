@@ -2,7 +2,7 @@ variable "instance_type" {
   default = ""
 }
 variable "region" {
-  default = ""
+  default   = ""
   sensitive = true
 }
 variable "base_name" {

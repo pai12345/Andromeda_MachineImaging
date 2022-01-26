@@ -1,5 +1,6 @@
 locals {
-  ami_name = "packer-ubuntu-aws-{{timestamp}}"
+  timestamp = timestamp()
+  ami_name  = "packer-ubuntu-aws-{{timestamp}}"
 }
 source "amazon-ebs" "ubuntu" {
   ami_name      = local.ami_name
@@ -20,4 +21,19 @@ build {
   sources = [
     "source.amazon-ebs.ubuntu"
   ]
+  provisioner "file" {
+    source      = "../../../scripts/update.sh"
+    destination = "/tmp/update.sh"
+    max_retries = 2
+  }
+  provisioner "shell" {
+    inline      = ["sh /tmp/update.sh"]
+    max_retries = 2
+  }
+  post-processor "manifest" {
+    output = "manifest.json"
+    custom_data = {
+      timestamp = "${local.timestamp}"
+    }
+  }
 }
