@@ -30,6 +30,10 @@ build {
     inline      = ["sh /tmp/update.sh"]
     max_retries = 2
   }
+  post-processor "checksum" {
+    checksum_types = ["sha256"]
+    output = "packer-ubuntu-aws-{{timestamp}}.checksum"
+  }
   post-processor "manifest" {
     output = "manifest.json"
     custom_data = {
