@@ -25,3 +25,10 @@ variable "ssh_username" {
   default   = ""
   sensitive = true
 }
+variable "skip_create_ami" {
+  default   = false
+  sensitive = true
+}
+variable "max_retries" {
+  default = 0
+}

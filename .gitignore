@@ -1,9 +1,9 @@
 # Cache objects
 packer_cache/
 
-# misc
-**/.vscode
+# json files
 **/settings.json
+**.json
 
 # Crash log
 crash.log
@@ -11,4 +11,7 @@ crash.log
 
 # For built boxes
 *.box
+
+# misc
+**/.vscode
 **/.DS_Store

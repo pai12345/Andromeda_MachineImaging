@@ -6,3 +6,5 @@ virtualization_type = "hvm"
 most_recent         = true
 owners              = ["099720109477"]
 ssh_username        = "ubuntu"
+skip_create_ami     = false
+max_retries         = 0
